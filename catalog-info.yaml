@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tt-rr-sstt-test-gitops
+  description: This is GitOps manifest for tt-rr-sstt-test   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: tt-rr-sstt-test
+    janus-idp.io/tekton: tt-rr-sstt-test 
+    backstage.io/kubernetes-id: tt-rr-sstt-test 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tt-rr-sstt-test
